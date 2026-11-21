@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Vistas — Spot the Difference</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div id="brand">
+      <span id="brand-mark">◐</span>
+      <span id="brand-name">Twin Vistas</span>
+      <span id="brand-tag">spot the difference</span>
+    </div>
+    <div id="level-box">
+      <div id="level-name">Sunny Cove</div>
+      <div id="level-dots" aria-label="level progress"></div>
+    </div>
+  </header>
+
+  <div id="hud">
+    <div id="counter" class="hud-chip hud-main">
+      <span id="counter-number">8</span>
+      <span id="counter-label">differences<br>to find</span>
+    </div>
+    <div class="hud-chip">
+      <span class="hud-key">Score</span>
+      <span id="score" class="hud-value">0</span>
+    </div>
+    <div class="hud-chip" id="timer-chip">
+      <span class="hud-key">Time</span>
+      <span id="timer" class="hud-value">4:00</span>
+      <div id="timer-track"><div id="timer-bar"></div></div>
+    </div>
+    <div class="hud-chip">
+      <span class="hud-key">Misses</span>
+      <span id="misses" class="hud-value">0</span>
+    </div>
+    <button id="hint-btn" class="hud-btn" type="button">💡 Hint <span id="hint-count">3</span></button>
+    <button id="pause-btn" class="hud-btn" type="button">⏸ Pause</button>
+    <button id="sound-btn" class="hud-btn" type="button">🔊 Sound</button>
+  </div>
+
+  <div id="stage">
+    <figure class="panel-wrap">
+      <figcaption>Original</figcaption>
+      <canvas id="panel-left" width="1120" height="800"></canvas>
+    </figure>
+    <figure class="panel-wrap">
+      <figcaption>The twin — click what changed</figcaption>
+      <canvas id="panel-right" width="1120" height="800"></canvas>
+    </figure>
+    <div id="flash" aria-live="polite"></div>
+
+    <section id="overlay" class="hidden">
+      <div id="overlay-card">
+        <h1 id="overlay-title">Twin Vistas</h1>
+        <p id="overlay-body"></p>
+        <div id="overlay-stats"></div>
+        <div id="overlay-buttons"></div>
+      </div>
+    </section>
+  </div>
+
+  <footer id="helpbar">
+    <span>🖱 Click a difference in either picture</span>
+    <span>⌨ Arrows move the lens · <b>Enter</b> spots · <b>Tab</b> swaps picture · <b>H</b> hint · <b>P</b> pause</span>
+    <span id="scene-blurb"></span>
+  </footer>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
